@@ -10,8 +10,8 @@ const About: React.FC = () => {
             <h2 className="text-4xl font-bold text-slate-800 mb-4">About Me</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-emerald-600 mx-auto mb-8"></div>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Hi, I’m Luke Meyer — a computer science student at Northwestern University passionate about 
-              machine learning, robotics, and human-centered design. I love building systems that help people 
+              Hi, I’m Luke Meyer, a computer science student at Northwestern University passionate about 
+              machine learning, robotics, and human centered design. I love building systems that help people 
               interact more naturally with technology.
             </p>
           </header>
@@ -27,7 +27,7 @@ const About: React.FC = () => {
                 more usable for patients.
               </p>
               <p className="text-slate-600 mb-6">
-                Beyond research, I enjoy full-stack development — combining technical depth with creative 
+                Beyond research, I enjoy full-stack development, combining technical depth with creative 
                 design to build interfaces that are both functional and intuitive.
               </p>
               <ul className="flex flex-wrap gap-3 justify-center md:justify-start">
@@ -80,13 +80,6 @@ const About: React.FC = () => {
               </div>
             </div>
           </div>
-
-          <footer>
-            <p className="text-slate-500 text-sm max-w-2xl mx-auto">
-              I’m always eager to explore new technologies and projects that bridge human ability 
-              and intelligent systems. Let’s build something that makes a difference.
-            </p>
-          </footer>
         </article>
       </div>
     </section>
