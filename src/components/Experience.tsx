@@ -1,7 +1,7 @@
 import React from 'react';
 import { Calendar, MapPin, Briefcase, GraduationCap } from 'lucide-react';
 
-const ResumeExperience: React.FC = () => {
+const ResumeTimeline: React.FC = () => {
   const experiences = [
     {
       type: 'education',
@@ -13,35 +13,20 @@ const ResumeExperience: React.FC = () => {
     },
     {
       type: 'research',
-      title: 'Research Assistant — Machine Learning for Assistive Robots (Robotic Arm)',
-      institution: 'Shirley Ryan Ability Lab (Argallab)',
-      location: 'Chicago, IL',
+      title: 'Research Assistant — Shirley Ryan Ability Lab (Argallab)',
+      institution: 'Chicago, IL',
       period: 'Sep 2024 - Present',
       details: [
-        'Developed Python pipeline translating IMU signals into robotic arm commands for real-time control',
-        'Designed filtering techniques to reduce sensor noise, improving control accuracy for daily tasks',
-        'Developed and compared ML models (LSTMs, Random Forest) to detect spasms and ensure safety',
-        'Evaluated models on augmented inertial datasets to boost spasm detection accuracy while minimizing false positives'
+        'Developed Python pipelines translating IMU signals into robotic arm commands for real-time patient control',
+        'Built React-based GUI for LUCI wheelchair integrating ROS 2 and path-planning algorithms for safe navigation',
+        'Designed filtering and ML models (LSTMs, Random Forest) to detect spasms, improving safety and accuracy',
+        'Collaborated with therapists and patients to refine interface for accessibility and usability'
       ]
     },
     {
       type: 'research',
-      title: 'Project DRIVE — Sensor Assisted Wheelchair',
-      institution: 'Shirley Ryan Ability Lab (Argallab)',
-      location: 'Chicago, IL',
-      period: 'Sep 2024 - Present',
-      details: [
-        'Built React-based GUI for LUCI wheelchair, integrating with ROS 2 and Foxglove',
-        'Integrated path-planning algorithms for safe, autonomous navigation',
-        'Developed APIs for real-time communication between wheelchair and GUI',
-        'Collaborated with therapists and patients to refine interface for usability and accessibility'
-      ]
-    },
-    {
-      type: 'research',
-      title: 'Student Mentee',
-      institution: 'Young Stem Scholars',
-      location: 'Sioux Falls, SD',
+      title: 'Student Mentee — Young Stem Scholars',
+      institution: 'Sioux Falls, SD',
       period: 'Summer 2024',
       details: [
         'Created R pipeline analyzing ChIP-Seq data from 20,000+ proteins to investigate cancer cell senescence'
@@ -49,12 +34,11 @@ const ResumeExperience: React.FC = () => {
     },
     {
       type: 'research',
-      title: 'Research Assistant',
-      institution: 'University of Nebraska Medical Center',
-      location: 'Omaha, NE',
+      title: 'Research Assistant — University of Nebraska Medical Center',
+      institution: 'Omaha, NE',
       period: 'Summer 2021',
       details: [
-        'Performed western blots to study long-term effects of early Midazolam exposure on infants',
+        'Performed western blots to study effects of early Midazolam exposure on infants',
         'Co-authored peer-reviewed paper and presented findings on neonatal polysubstance exposure'
       ]
     }
@@ -71,39 +55,59 @@ const ResumeExperience: React.FC = () => {
           </p>
         </header>
 
-        <div className="space-y-10">
-          {experiences.map((exp, idx) => (
-            <article key={idx} className="bg-slate-50 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <header className="flex items-center mb-2">
-                {exp.type === 'education' ? (
-                  <GraduationCap className="w-5 h-5 text-emerald-600 mr-2" />
-                ) : (
-                  <Briefcase className="w-5 h-5 text-blue-600 mr-2" />
-                )}
-                <h3 className="text-xl font-semibold text-slate-800">{exp.title}</h3>
-              </header>
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-gradient-to-b from-blue-600 to-emerald-600"></div>
 
-              <div className="flex items-center text-slate-600 text-sm mb-1">
-                <MapPin className="w-4 h-4 mr-1" />
-                <span>{exp.location}</span>
+          <div className="space-y-10">
+            {experiences.map((exp, idx) => (
+              <div
+                key={idx}
+                className={`relative flex items-center ${
+                  idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                }`}
+              >
+                {/* Timeline dot */}
+                <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-4 border-blue-600 rounded-full z-10"></div>
+
+                {/* Content */}
+                <div className={`w-full md:w-5/12 ${idx % 2 === 0 ? 'md:pr-8' : 'md:pl-8'} ml-16 md:ml-0`}>
+                  <article className="bg-slate-50 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                    <header className="flex items-center mb-2">
+                      {exp.type === 'education' ? (
+                        <GraduationCap className="w-5 h-5 text-emerald-600 mr-2" />
+                      ) : (
+                        <Briefcase className="w-5 h-5 text-blue-600 mr-2" />
+                      )}
+                      <h3 className="text-xl font-semibold text-slate-800">{exp.title}</h3>
+                    </header>
+
+                    {exp.institution && (
+                      <div className="flex items-center text-slate-600 text-sm mb-1">
+                        <MapPin className="w-4 h-4 mr-1" />
+                        <span>{exp.institution}</span>
+                      </div>
+                    )}
+
+                    <div className="flex items-center text-slate-500 text-sm mb-3">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      <span>{exp.period}</span>
+                    </div>
+
+                    <ul className="list-disc list-inside text-slate-600 text-sm space-y-1">
+                      {exp.details.map((detail, i) => (
+                        <li key={i}>{detail}</li>
+                      ))}
+                    </ul>
+                  </article>
+                </div>
               </div>
-
-              <div className="flex items-center text-slate-500 text-sm mb-3">
-                <Calendar className="w-4 h-4 mr-1" />
-                <span>{exp.period}</span>
-              </div>
-
-              <ul className="list-disc list-inside text-slate-600 text-sm space-y-1">
-                {exp.details.map((detail, i) => (
-                  <li key={i}>{detail}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default ResumeExperience;
+export default ResumeTimeline;
