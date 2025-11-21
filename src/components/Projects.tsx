@@ -22,6 +22,16 @@ const projects = [
     githubUrl: 'https://github.com/Luke-Meyer-hue/recipe-tracker',
     date: '2024',
   },
+  {
+    title: 'Game Recommender',
+    description:
+      'An AI-powered app that recommends video games based on similarity and quality. Uses TF-IDF and nearest neighbors to analyze game descriptions, genres, and tags, then ranks recommendations by review scores and Metacritic ratings. Built with Streamlit, pandas, scikit-learn, and supports large datasets for fast, interactive searching.',
+    image: 'src/components/images/projects/game-recommendation.jpg',
+    technologies: ['Python', 'Streamlit', 'pandas', 'scikit-learn', 'Numpy'],
+    liveUrl: '',
+    githubUrl: 'https://github.com/Luke-Meyer-hue/game-recommender',
+    date: '2025',
+  },
 ];
 
 const Projects: React.FC = () => {

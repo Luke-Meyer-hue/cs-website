@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
         <a href="https://github.com/Luke-Meyer-hue" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors flex items-center space-x-2">
           <Github size={24} /> <span className="hidden md:inline">GitHub</span>
         </a>
-        <a href="https://www.linkedin.com/in/luke-meyer/" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors flex items-center space-x-2">
+        <a href="https://www.linkedin.com/in/luke-meyer-2b54332a5" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors flex items-center space-x-2">
           <Linkedin size={24} /> <span className="hidden md:inline">LinkedIn</span>
         </a>
       </div>
