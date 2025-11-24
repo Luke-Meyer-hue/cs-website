@@ -6,7 +6,7 @@ const projects = [
     title: 'Combined Workspace',
     description:
       'A full-stack productivity platform that unifies daily tools—calendar, task manager, and search—into an RPG-inspired workspace. Designed to make organization more engaging and efficient.',
-    image: 'src/components/images/projects/combined-workspace.jpg',
+    image: 'projects/combined-workspace.jpg',
     technologies: ['React', 'TypeScript', 'Node.js', 'FastAPI', 'AWS'],
     liveUrl: 'https://luke-meyer-hue.github.io/combined-workspace/',
     githubUrl: 'https://github.com/Luke-Meyer-hue/combined-workspace',
@@ -16,7 +16,7 @@ const projects = [
     title: 'Recipe Tracker',
     description:
       'A web app for tracking and organizing recipes. Easily add, edit, and search your favorite recipes with a clean, intuitive interface.',
-    image: 'src/components/images/projects/recipe-tracker.jpg',
+    image: 'projects/recipe-tracker.jpg',
     technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
     liveUrl: '',
     githubUrl: 'https://github.com/Luke-Meyer-hue/recipe-tracker',
@@ -26,7 +26,7 @@ const projects = [
     title: 'Game Recommender',
     description:
       'An AI-powered app that recommends video games based on similarity and quality. Uses TF-IDF and nearest neighbors to analyze game descriptions, genres, and tags, then ranks recommendations by review scores and Metacritic ratings. Built with Streamlit, pandas, scikit-learn, and supports large datasets for fast, interactive searching.',
-    image: 'src/components/images/projects/game-recommendation.jpg',
+    image: 'projects/game-recommendation.jpg',
     technologies: ['Python', 'Streamlit', 'pandas', 'scikit-learn', 'Numpy'],
     liveUrl: '',
     githubUrl: 'https://github.com/Luke-Meyer-hue/game-recommender',
